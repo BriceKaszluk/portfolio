@@ -44,10 +44,10 @@ export default function Home() {
 
           <div>
             <Image
-              src="/profil-ronde.png" // Chemin de l'image depuis le dossier public
+              src="/profil-ronde.png"
               alt="ma photo de profil"
-              width={192} // Largeur de l'image en pixels
-              height={192} // Hauteur de l'image en pixels
+              width={192}
+              height={192}
               className="mx-auto rounded-full mb-4 border border-gray-500 shadow-md"
             />
             <div className="text-center mt-6">
@@ -59,10 +59,10 @@ export default function Home() {
               >
                 Contact
                 <Image
-                  src="/linkedin.png" // Chemin de l'image depuis le dossier public
+                  src="/linkedin.png"
                   alt="Logo LinkedIn"
-                  width={32} // Largeur de l'image en pixels
-                  height={32} // Hauteur de l'image en pixels
+                  width={32}
+                  height={32}
                   className="rounded-full ml-2 cursor-pointer transition-transform transform-gpu hover:scale-110 active:scale-95"
                 />
               </a>
@@ -103,9 +103,9 @@ export default function Home() {
             <Image
               src="/background-portfolio.png"
               alt="un développeur travaillant sur son ordinateur"
-              layout="fill" // Ceci va remplir l'espace du div parent
-              objectFit="cover" // Comme 'object-cover' en tailwind
-              priority // Ceci est optionnel, cela indique à Next.js de précharger l'image lors du chargement initial de la page.
+              layout="fill"
+              objectFit="cover"
+              priority
             />
           </div>
           {/* Contenu de la colonne centrale */}
@@ -121,9 +121,9 @@ export default function Home() {
               <Image
                 src="/ampoule.png"
                 alt="une ampoule à l'intérieur d'un éclair"
-                layout="fill" // Remplir l'espace du div parent
-                objectFit="contain" // Garder tout le contenu de l'image visible
-                className="rounded-full" // Appliquer les classes rondes directement à l'image
+                layout="fill"
+                objectFit="contain"
+                className="rounded-full"
               />
             </div>
           </div>
@@ -264,30 +264,22 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 h-full gap-4">
           {/* Projet 1 */}
           <div className="block shadow-lg md:min-h-screen border border-gray-500">
-            <div className="group relative w-full md:h-1/2 h-64 ">
-              <div className="w-full h-full transition-opacity duration-300 ease-in-out group-hover:opacity-50">
-                <Image
-                  src="/weneedlove-picture.png"
-                  alt="WeNeedLove"
-                  layout="fill"
-                  objectFit="contain"
-                />
-              </div>
-              <Link
-                href="https://www.weneedlove.fr/"
-                passHref
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center text-white transition-opacity duration-300 ease-in-out group-hover:bg-opacity-70 group-hover:opacity-100">
-                  <span className="text-xl font-bold">Voir le projet</span>
-                </div>
-              </Link>
+            <div className="relative w-full md:h-1/2">
+              {/* Image container */}
+              <Image
+                src="/weneedlove-picture.png"
+                alt="WeNeedLove"
+                layout="responsive"
+                width={100}
+                height={50}
+                objectFit="contain"
+                quality={100}
+              />
             </div>
 
+            {/* Project Information */}
             <div className="p-4 h-1/2 flex flex-col justify-between">
               <h3 className="font-bold text-white">WeNeedLove</h3>
-
               <p className="text-white mt-2">
                 WeNeedLove est une application dédiée à la création de liens par
                 le partage d&apos;histoires personnelles touchantes, favorisant
@@ -340,30 +332,34 @@ export default function Home() {
                   </span>
                 </div>
               </div>
+
+              {/* Project Access Button */}
+              <Link
+                href="https://www.weneedlove.fr/"
+                passHref
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="mt-4 py-2 px-4 bg-blue-500 text-white font-bold text-center rounded hover:bg-blue-600 transition duration-300">
+                  Voir le projet
+                </div>
+              </Link>
             </div>
           </div>
 
           {/* Projet 2 */}
           <div className="block shadow-lg md:min-h-screen border border-gray-500">
-            <div className="group relative w-full md:h-1/2 h-64 ">
-              <div className="w-full h-full transition-opacity duration-300 ease-in-out group-hover:opacity-50">
-                <Image
-                  src="/phishing-detector-picture.png"
-                  alt="Phishing Detector"
-                  layout="fill"
-                  objectFit="contain"
-                />
-              </div>
-              <Link
-                href="https://www.phishing-detector.fr/"
-                passHref
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center text-white transition-opacity duration-300 ease-in-out group-hover:bg-opacity-70 group-hover:opacity-100">
-                  <span className="text-xl font-bold">Voir le projet</span>
-                </div>
-              </Link>
+          <div className="relative w-full md:h-1/2">
+              {/* Image container */}
+              <Image
+                src="/phishing-detector-picture.png"
+                alt="phishing-detector"
+                layout="responsive"
+                width={100}
+                height={50}
+                objectFit="contain"
+                quality={100}
+              />
             </div>
             <div className="p-4 h-1/2 flex flex-col justify-between">
               <h3 className="font-bold">Phishing Detection App</h3>
@@ -422,30 +418,32 @@ export default function Home() {
                   </span>
                 </div>
               </div>
+              <Link
+                href="https://www.phishing-detector.fr/"
+                passHref
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="mt-4 py-2 px-4 bg-blue-500 text-white font-bold text-center rounded hover:bg-blue-600 transition duration-300">
+                  Voir le projet
+                </div>
+              </Link>
             </div>
           </div>
 
           {/* Projet 3 */}
           <div className="block shadow-lg md:min-h-screen border border-gray-500">
-            <div className="group relative w-full md:h-1/2 h-64 ">
-              <div className="w-full h-full transition-opacity duration-300 ease-in-out group-hover:opacity-50">
-                <Image
-                  src="/webvista-picture.png"
-                  alt="WebVista"
-                  layout="fill"
-                  objectFit="contain"
-                />
-              </div>
-              <Link
-                href="https://www.webvista.fr/"
-                passHref
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center text-white transition-opacity duration-300 ease-in-out group-hover:bg-opacity-70 group-hover:opacity-100">
-                  <span className="text-xl font-bold">Voir le projet</span>
-                </div>
-              </Link>
+          <div className="relative w-full md:h-1/2">
+              {/* Image container */}
+              <Image
+                src="/webvista-picture.png"
+                alt="webvista"
+                layout="responsive"
+                width={100}
+                height={50}
+                objectFit="contain"
+                quality={100}
+              />
             </div>
             <div className="p-4 h-1/2 flex flex-col justify-between">
               <h3 className="font-bold">Mon Site Webvista</h3>
@@ -462,7 +460,7 @@ export default function Home() {
                 </li>
                 <li className="mt-4">
                   Atteinte de la première position dans les résultats de
-                  recherche Google pour &quot;Webvista&quot;.
+                  recherche Google pour "Webvista".
                 </li>
                 <li className="mt-4">
                   Application des meilleures pratiques SEO pour un référencement
@@ -493,30 +491,32 @@ export default function Home() {
                   </span>
                 </div>
               </div>
+              <Link
+                href="https://www.webvista.fr/"
+                passHref
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="mt-4 py-2 px-4 bg-blue-500 text-white font-bold text-center rounded hover:bg-blue-600 transition duration-300">
+                  Voir le projet
+                </div>
+              </Link>
             </div>
           </div>
 
           {/* Projet 4 */}
           <div className="block shadow-lg md:min-h-screen border border-gray-500">
-            <div className="group relative w-full md:h-1/2 h-64 ">
-              <div className="w-full h-full transition-opacity duration-300 ease-in-out group-hover:opacity-50">
-                <Image
-                  src="/christian-picture.png"
-                  alt="Christian"
-                  layout="fill"
-                  objectFit="contain"
-                />
-              </div>
-              <Link
-                href="https://christian-free-nextjs.vercel.app/"
-                passHref
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center text-white transition-opacity duration-300 ease-in-out group-hover:bg-opacity-70 group-hover:opacity-100">
-                  <span className="text-xl font-bold">Voir le projet</span>
-                </div>
-              </Link>
+          <div className="relative w-full md:h-1/2">
+              {/* Image container */}
+              <Image
+                src="/christian-picture.png"
+                alt="christian photograpahie"
+                layout="responsive"
+                width={100}
+                height={50}
+                objectFit="contain"
+                quality={100}
+              />
             </div>
             <div className="p-4 h-1/2 flex flex-col justify-between">
               <h3 className="font-bold">Site Vitrine pour Photographe</h3>
@@ -564,6 +564,16 @@ export default function Home() {
                   </span>
                 </div>
               </div>
+              <Link
+                href="https://christian-free-nextjs.vercel.app/"
+                passHref
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="mt-4 py-2 px-4 bg-blue-500 text-white font-bold text-center rounded hover:bg-blue-600 transition duration-300">
+                  Voir le projet
+                </div>
+              </Link>
             </div>
           </div>
         </div>

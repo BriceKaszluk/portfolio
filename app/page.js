@@ -1,17 +1,32 @@
 import Image from "next/image";
 import Head from "next/head";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div>
       <Head>
-        <title>Brice - Développeur Full Stack Spécialisé en React | Portfolio</title>
-        <meta name="description" content="Découvrez le portfolio de Brice, développeur Full Stack spécialisé en React, Node.js, et technologies modernes du web. Passionné et prêt à relever de nouveaux défis." />
-        <meta name="keywords" content="Brice, Développeur Full Stack, React, Next.js, Node.js, Supabase, PostgreSQL, Firebase, Material UI, Tailwind CSS, AWS, Développement Web, Portfolio" />
+        <title>
+          Brice - Développeur Full Stack Spécialisé en React | Portfolio
+        </title>
+        <meta
+          name="description"
+          content="Découvrez le portfolio de Brice, développeur Full Stack spécialisé en React, Node.js, et technologies modernes du web. Passionné et prêt à relever de nouveaux défis."
+        />
+        <meta
+          name="keywords"
+          content="Brice, Développeur Full Stack, React, Next.js, Node.js, Supabase, PostgreSQL, Firebase, Material UI, Tailwind CSS, AWS, Développement Web, Portfolio"
+        />
         <link rel="canonical" href="https://votre-domaine.com" />
-        <meta property="og:title" content="Brice - Développeur Full Stack Spécialisé en React | Portfolio" />
-        <meta property="og:description" content="Un développeur animé par une passion pour le web et la création d'expériences utilisateurs captivantes. Découvrez mon parcours et mes projets." />
-        <meta property="og:image" content="https://votre-domaine.com/chemin-vers-votre-photo.jpg" />
+        <meta
+          property="og:title"
+          content="Brice - Développeur Full Stack Spécialisé en React | Portfolio"
+        />
+        <meta
+          property="og:description"
+          content="Un développeur animé par une passion pour le web et la création d'expériences utilisateurs captivantes. Découvrez mon parcours et mes projets."
+        />
+        <meta property="og:image" content="https://portfolio-og.png" />
         <meta property="og:url" content="https://votre-domaine.com" />
         <meta property="og:site_name" content="Portfolio de Brice" />
         {/* Ajoutez le fichier favicon.ico dans le dossier public */}
@@ -28,10 +43,12 @@ export default function Home() {
           </h1>
 
           <div>
-            <img
-              src="/profil-ronde.png"
-              alt="Votre photo"
-              className="w-48 h-48 mx-auto rounded-full mb-4 border border-gray-500 shadow-md"
+            <Image
+              src="/profil-ronde.png" // Chemin de l'image depuis le dossier public
+              alt="ma photo de profil"
+              width={192} // Largeur de l'image en pixels
+              height={192} // Hauteur de l'image en pixels
+              className="mx-auto rounded-full mb-4 border border-gray-500 shadow-md"
             />
             <div className="text-center mt-6">
               <a
@@ -41,10 +58,12 @@ export default function Home() {
                 className="bg-blue-500 hover:bg-blue-600 text-xl text-white font-bold py-2 px-4 rounded inline-flex items-center space-x-2"
               >
                 Contact
-                <img
-                  src="/linkedin.png"
+                <Image
+                  src="/linkedin.png" // Chemin de l'image depuis le dossier public
                   alt="Logo LinkedIn"
-                  className="w-8 h-8 rounded-full ml-2 cursor-pointer transition-transform transform-gpu hover:scale-110 active:scale-95"
+                  width={32} // Largeur de l'image en pixels
+                  height={32} // Hauteur de l'image en pixels
+                  className="rounded-full ml-2 cursor-pointer transition-transform transform-gpu hover:scale-110 active:scale-95"
                 />
               </a>
             </div>
@@ -64,14 +83,14 @@ export default function Home() {
               </p>
               <p>
                 Que ce soit en collaborant étroitement avec des startups ou en
-                menant des projets personnels, je mets mon cœur à l&apos;ouvrage pour
-                que chaque interaction sur le web soit plus intuitive, sécurisée
-                et agréable.
+                menant des projets personnels, je mets mon cœur à l&apos;ouvrage
+                pour que chaque interaction sur le web soit plus intuitive,
+                sécurisée et agréable.
               </p>
               <p>
-                Ma vision du développement est simple : il s&apos;agit de tisser des
-                liens entre les gens et l&apos;information, avec créativité et
-                humanité.
+                Ma vision du développement est simple : il s&apos;agit de tisser
+                des liens entre les gens et l&apos;information, avec créativité
+                et humanité.
               </p>
             </div>
           </div>
@@ -80,11 +99,15 @@ export default function Home() {
         {/* Colonne centrale */}
         <div className="md:w-2/4 p-4 relative">
           <div className="absolute w-full h-full md:bg-[#1c212d]/40"></div>
-          <img
-            src="/background-portfolio.png"
-            alt="Votre photo"
-            className="w-full h-[50vh] md:h-screen object-cover"
-          />
+          <div className="w-full h-[50vh] md:h-screen relative">
+            <Image
+              src="/background-portfolio.png"
+              alt="un développeur travaillant sur son ordinateur"
+              layout="fill" // Ceci va remplir l'espace du div parent
+              objectFit="cover" // Comme 'object-cover' en tailwind
+              priority // Ceci est optionnel, cela indique à Next.js de précharger l'image lors du chargement initial de la page.
+            />
+          </div>
           {/* Contenu de la colonne centrale */}
         </div>
 
@@ -94,11 +117,15 @@ export default function Home() {
             <div className="absolute inset-0 flex justify-center items-center">
               <div className="rounded-full shadow-lg animate-ping slow-ping bg-amber-300 opacity-75 w-44 h-44"></div>
             </div>
-            <img
-              src="/ampoule.png"
-              alt="Votre photo"
-              className="z-10 w-80 h-80 rounded-full mb-4 object-contain"
-            />
+            <div className="relative z-10 w-80 h-80 mb-4 overflow-hidden rounded-full">
+              <Image
+                src="/ampoule.png"
+                alt="une ampoule à l'intérieur d'un éclair"
+                layout="fill" // Remplir l'espace du div parent
+                objectFit="contain" // Garder tout le contenu de l'image visible
+                className="rounded-full" // Appliquer les classes rondes directement à l'image
+              />
+            </div>
           </div>
 
           <div className="p-5 w-full mx-auto">
@@ -165,8 +192,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <div className="space-y-4">
             <blockquote className="italic text-gray-400 text-lg border-b border-gray-600 pb-4">
-            &quot;I highly recommend Brice for any development project. I had the
-              pleasure of working closely with him on both the backend
+              &quot;I highly recommend Brice for any development project. I had
+              the pleasure of working closely with him on both the backend
               (particularly involving AWS Lambda, microservices and TypeScript)
               and frontend (React) aspects of a project, and I must say that his
               dedication and motivation were truly exceptional. Brice actively
@@ -237,20 +264,25 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 h-full gap-4">
           {/* Projet 1 */}
           <div className="block shadow-lg md:min-h-screen border border-gray-500">
-            <div className="relative w-full md:h-1/2 group">
-              <img
-                src="/weneedlove-picture.png"
-                alt="WeNeedLove"
-                className="w-full h-full object-contain group-hover:opacity-50"
-              />
-              <a
+            <div className="group relative w-full md:h-1/2 h-64 ">
+              <div className="w-full h-full transition-opacity duration-300 ease-in-out group-hover:opacity-50">
+                <Image
+                  src="/weneedlove-picture.png"
+                  alt="WeNeedLove"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+              <Link
                 href="https://www.weneedlove.fr/"
+                passHref
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out"
               >
-                <span className="text-xl font-bold">Voir le projet</span>
-              </a>
+                <div className="absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center text-white transition-opacity duration-300 ease-in-out group-hover:bg-opacity-70 group-hover:opacity-100">
+                  <span className="text-xl font-bold">Voir le projet</span>
+                </div>
+              </Link>
             </div>
 
             <div className="p-4 h-1/2 flex flex-col justify-between">
@@ -258,14 +290,14 @@ export default function Home() {
 
               <p className="text-white mt-2">
                 WeNeedLove est une application dédiée à la création de liens par
-                le partage d&apos;histoires personnelles touchantes, favorisant le
-                soutien mutuel et l&apos;expression des émotions au sein d&apos;une
-                communauté bienveillante.
+                le partage d&apos;histoires personnelles touchantes, favorisant
+                le soutien mutuel et l&apos;expression des émotions au sein
+                d&apos;une communauté bienveillante.
               </p>
               <ul className="list-disc pl-5 mt-2 text-white">
                 <li className="mt-4">
-                  Conception d&apos;une plateforme de soutien permettant de partager
-                  des histoires et d&apos;offrir/recevoir du soutien.
+                  Conception d&apos;une plateforme de soutien permettant de
+                  partager des histoires et d&apos;offrir/recevoir du soutien.
                 </li>
                 <li className="mt-4">
                   Authentification des utilisateurs et gestion des données
@@ -276,8 +308,8 @@ export default function Home() {
                   rassurante pour encourager la participation.
                 </li>
                 <li className="mt-4">
-                  Implémentation d&apos;un système de notifications pour tenir les
-                  utilisateurs informés des dernières interactions.
+                  Implémentation d&apos;un système de notifications pour tenir
+                  les utilisateurs informés des dernières interactions.
                 </li>
               </ul>
               <div className="mt-4">
@@ -313,46 +345,52 @@ export default function Home() {
 
           {/* Projet 2 */}
           <div className="block shadow-lg md:min-h-screen border border-gray-500">
-            <div className="relative w-full md:h-1/2 group">
-              <img
-                src="/phishing-detector-picture.png"
-                alt="WeNeedLove"
-                className="w-full h-full object-contain group-hover:opacity-50"
-              />
-              <a
+            <div className="group relative w-full md:h-1/2 h-64 ">
+              <div className="w-full h-full transition-opacity duration-300 ease-in-out group-hover:opacity-50">
+                <Image
+                  src="/phishing-detector-picture.png"
+                  alt="Phishing Detector"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+              <Link
                 href="https://www.phishing-detector.fr/"
+                passHref
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out"
               >
-                <span className="text-xl font-bold">Voir le projet</span>
-              </a>
+                <div className="absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center text-white transition-opacity duration-300 ease-in-out group-hover:bg-opacity-70 group-hover:opacity-100">
+                  <span className="text-xl font-bold">Voir le projet</span>
+                </div>
+              </Link>
             </div>
             <div className="p-4 h-1/2 flex flex-col justify-between">
               <h3 className="font-bold">Phishing Detection App</h3>
               <p className="text-white mt-2">
                 Une solution innovante d&apos;analyse de phishing qui permet aux
-                utilisateurs de scanner et d&apos;obtenir un score de sécurité pour
-                chaque e-mail, assurant une protection avancée contre les
+                utilisateurs de scanner et d&apos;obtenir un score de sécurité
+                pour chaque e-mail, assurant une protection avancée contre les
                 cybermenaces.
               </p>
               <ul className="list-disc pl-5 mt-2 text-white">
                 <li className="mt-4">
-                  Développement d&apos;un algorithme personnalisé pour l&apos;analyse des
-                  e-mails et la détection des tentatives de phishing.
+                  Développement d&apos;un algorithme personnalisé pour
+                  l&apos;analyse des e-mails et la détection des tentatives de
+                  phishing.
                 </li>
                 <li className="mt-4">
                   Authentification sécurisée via le compte Google de
                   l&apos;utilisateur.
                 </li>
                 <li className="mt-4">
-                  Importation et analyse des e-mails de l&apos;utilisateur avec l&apos;API
-                  Gmail, sans conservation des données pour une confidentialité
-                  totale.
+                  Importation et analyse des e-mails de l&apos;utilisateur avec
+                  l&apos;API Gmail, sans conservation des données pour une
+                  confidentialité totale.
                 </li>
                 <li className="mt-4">
-                  Conception d&apos;une base de données robuste avec Supabase pour
-                  gérer le traitement des e-mails.
+                  Conception d&apos;une base de données robuste avec Supabase
+                  pour gérer le traitement des e-mails.
                 </li>
               </ul>
               <div className="mt-4">
@@ -389,44 +427,50 @@ export default function Home() {
 
           {/* Projet 3 */}
           <div className="block shadow-lg md:min-h-screen border border-gray-500">
-            <div className="relative w-full md:h-1/2 group">
-              <img
-                src="/webvista-picture.png"
-                alt="WeNeedLove"
-                className="w-full h-full object-contain group-hover:opacity-50"
-              />
-              <a
+            <div className="group relative w-full md:h-1/2 h-64 ">
+              <div className="w-full h-full transition-opacity duration-300 ease-in-out group-hover:opacity-50">
+                <Image
+                  src="/webvista-picture.png"
+                  alt="WebVista"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+              <Link
                 href="https://www.webvista.fr/"
+                passHref
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out"
               >
-                <span className="text-xl font-bold">Voir le projet</span>
-              </a>
+                <div className="absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center text-white transition-opacity duration-300 ease-in-out group-hover:bg-opacity-70 group-hover:opacity-100">
+                  <span className="text-xl font-bold">Voir le projet</span>
+                </div>
+              </Link>
             </div>
             <div className="p-4 h-1/2 flex flex-col justify-between">
               <h3 className="font-bold">Mon Site Webvista</h3>
               <p className="text-white mt-2">
                 Mon site personnel conçu pour mettre en avant mon expertise et
-                atteindre la première position sur le mot clé &quot;Webvista&quot; dans
-                les résultats de recherche, grâce à une stratégie SEO pointue.
+                atteindre la première position sur le mot clé
+                &quot;Webvista&quot; dans les résultats de recherche, grâce à
+                une stratégie SEO pointue.
               </p>
               <ul className="list-disc pl-5 mt-2 text-white">
                 <li className="mt-4">
-                  Développement du site axé sur l&apos;augmentation de la visibilité
-                  en ligne personnelle.
+                  Développement du site axé sur l&apos;augmentation de la
+                  visibilité en ligne personnelle.
                 </li>
                 <li className="mt-4">
                   Atteinte de la première position dans les résultats de
-                  recherche Google pour "Webvista".
+                  recherche Google pour &quot;Webvista&quot;.
                 </li>
                 <li className="mt-4">
                   Application des meilleures pratiques SEO pour un référencement
                   optimal.
                 </li>
                 <li className="mt-4">
-                  Création d&apos;une interface utilisateur claire et attrayante pour
-                  une expérience visiteur améliorée.
+                  Création d&apos;une interface utilisateur claire et attrayante
+                  pour une expérience visiteur améliorée.
                 </li>
               </ul>
               <div className="mt-4">
@@ -454,20 +498,25 @@ export default function Home() {
 
           {/* Projet 4 */}
           <div className="block shadow-lg md:min-h-screen border border-gray-500">
-            <div className="relative w-full md:h-1/2 group">
-              <img
-                src="/christian-picture.png"
-                alt="WeNeedLove"
-                className="w-full h-full object-contain group-hover:opacity-50"
-              />
-              <a
+            <div className="group relative w-full md:h-1/2 h-64 ">
+              <div className="w-full h-full transition-opacity duration-300 ease-in-out group-hover:opacity-50">
+                <Image
+                  src="/christian-picture.png"
+                  alt="Christian"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+              <Link
                 href="https://christian-free-nextjs.vercel.app/"
+                passHref
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out"
               >
-                <span className="text-xl font-bold">Voir le projet</span>
-              </a>
+                <div className="absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center text-white transition-opacity duration-300 ease-in-out group-hover:bg-opacity-70 group-hover:opacity-100">
+                  <span className="text-xl font-bold">Voir le projet</span>
+                </div>
+              </Link>
             </div>
             <div className="p-4 h-1/2 flex flex-col justify-between">
               <h3 className="font-bold">Site Vitrine pour Photographe</h3>
@@ -479,8 +528,8 @@ export default function Home() {
               </p>
               <ul className="list-disc pl-5 mt-2 text-white">
                 <li className="mt-4">
-                  Mise en place d&apos;un espace administrateur pour la gestion des
-                  contenus et des tarifs en toute autonomie.
+                  Mise en place d&apos;un espace administrateur pour la gestion
+                  des contenus et des tarifs en toute autonomie.
                 </li>
                 <li className="mt-4">
                   Authentification sécurisée pour accéder au tableau de bord du
@@ -520,10 +569,16 @@ export default function Home() {
         </div>
       </div>
       <section className="bg-[#1c212d] text-white py-12">
-  <div className="container mx-auto px-4 text-center">
-    <h2 className="text-3xl font-bold mb-4">Vous avez besoin d'un développeur passionné ?</h2>
-    <p className="mb-8 text-center">Je suis prêt à apporter mon expertise à votre projet et à relever de nouveaux défis. Contactez-moi pour commencer une collaboration fructueuse.</p>
-    <div className="text-center mt-6">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4">
+            Vous avez besoin d&apos;un développeur passionné ?
+          </h2>
+          <p className="mb-8 text-center">
+            Je suis prêt à apporter mon expertise à votre projet et à relever de
+            nouveaux défis. Contactez-moi pour commencer une collaboration
+            fructueuse.
+          </p>
+          <div className="text-center mt-6">
             <a
               href="https://www.linkedin.com/in/bricekaszluk"
               target="_blank"
@@ -533,8 +588,8 @@ export default function Home() {
               Contactez-moi
             </a>
           </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       <footer className="bg-gray-800 text-white text-center p-4">
         <div className="flex justify-center items-center">

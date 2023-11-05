@@ -414,7 +414,7 @@ export default function Home() {
                     Next.js
                   </span>
                   <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    Sens de l’organisation
+                    Sens de l&apos;organisation
                   </span>
                 </div>
               </div>
@@ -460,7 +460,7 @@ export default function Home() {
                 </li>
                 <li className="mt-4">
                   Atteinte de la première position dans les résultats de
-                  recherche Google pour "Webvista".
+                  recherche Google pour &quot;Webvista&quot;.
                 </li>
                 <li className="mt-4">
                   Application des meilleures pratiques SEO pour un référencement

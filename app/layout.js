@@ -1,43 +1,44 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Head from "next/head";
+import { Inter } from 'next/font/google'
+import './globals.css'
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata = {
+  title: 'Brice - Développeur Full Stack Spécialisé en React | Portfolio',
+  description: 'Découvrez le portfolio de Brice, développeur Full Stack spécialisé en React, Node.js, et technologies modernes du web. Passionné et prêt à relever de nouveaux défis.',
+  openGraph: {
+    title: 'Brice - Développeur Full Stack Spécialisé en React | Portfolio',
+    description: 'Un développeur animé par une passion pour le web et la création d\'expériences utilisateurs captivantes. Découvrez mon parcours et mes projets.',
+    images: [
+      {
+        url: 'https://portfolio-og.png',
+        width: 1200,
+        height: 630,
+        alt: 'Brice Kaszluk Portfolio'
+      }
+    ],
+    url: 'https://portfolio-kaszluk-brice.vercel.app',
+    site_name: 'Portfolio de Brice',
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@bricekaszluk',
+    title: 'Brice - Développeur Full Stack Spécialisé en React | Portfolio',
+    description: 'Découvrez le portfolio de Brice, développeur Full Stack spécialisé en React, Node.js, et technologies modernes du web.',
+    image: 'https://portfolio-og.png',
+    creator: '@bricekaszluk'
+  },
+  keywords: ['Brice', 'Développeur Full Stack', 'React', 'Next.js', 'Node.js', 'Supabase', 'PostgreSQL', 'Firebase', 'Material UI', 'Tailwind CSS', 'AWS', 'Développement Web', 'Portfolio'],
+  author: 'Brice Kaszluk',
+  canonical: 'https://portfolio-kaszluk-brice.vercel.app',
+  // Add any other metadata fields you need
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <Head>
-        <title>
-          Brice - Développeur Full Stack Spécialisé en React | Portfolio
-        </title>
-        <meta
-          name="description"
-          content="Découvrez le portfolio de Brice, développeur Full Stack spécialisé en React, Node.js, et technologies modernes du web. Passionné et prêt à relever de nouveaux défis."
-        />
-        <meta
-          name="keywords"
-          content="Brice, Développeur Full Stack, React, Next.js, Node.js, Supabase, PostgreSQL, Firebase, Material UI, Tailwind CSS, AWS, Développement Web, Portfolio"
-        />
-        <link rel="canonical" href="https://votre-domaine.com" />
-        <meta
-          property="og:title"
-          content="Brice - Développeur Full Stack Spécialisé en React | Portfolio"
-        />
-        <meta
-          property="og:description"
-          content="Un développeur animé par une passion pour le web et la création d'expériences utilisateurs captivantes. Découvrez mon parcours et mes projets."
-        />
-        <meta property="og:image" content="https://portfolio-og.png" />
-        <meta property="og:url" content="https://votre-domaine.com" />
-        <meta property="og:site_name" content="Portfolio de Brice" />
-        {/* Ajoutez le fichier favicon.ico dans le dossier public */}
-        <link rel="icon" href="/favicon.ico" />
-        {/* Si vous avez un compte LinkedIn, vous pouvez ajouter le lien ici */}
-        <link rel="me" href="https://www.linkedin.com/in/bricekaszluk" />
-        <meta name="author" content="Brice, kaszlukb@gmail.com" />
-      </Head>
       <body>{children}</body>
     </html>
-  );
+  )
 }

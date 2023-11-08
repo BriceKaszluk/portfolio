@@ -11,7 +11,7 @@ export const metadata = {
     description: 'Un développeur animé par une passion pour le web et la création d\'expériences utilisateurs captivantes. Découvrez mon parcours et mes projets.',
     images: [
       {
-        url: 'https://portfolio-og.png',
+        url: 'https://portfolio-kaszluk-brice.vercel.app/portfolio-og.png',
         width: 1200,
         height: 630,
         alt: 'Brice Kaszluk Portfolio'
@@ -26,7 +26,7 @@ export const metadata = {
     site: '@bricekaszluk',
     title: 'Brice - Développeur Full Stack Spécialisé en React | Portfolio',
     description: 'Découvrez le portfolio de Brice, développeur Full Stack spécialisé en React, Node.js, et technologies modernes du web.',
-    image: 'https://portfolio-og.png',
+    image: 'https://portfolio-kaszluk-brice.vercel.app/portfolio-og.png',
     creator: '@bricekaszluk'
   },
   keywords: ['Brice', 'Développeur Full Stack', 'React', 'Next.js', 'Node.js', 'Supabase', 'PostgreSQL', 'Firebase', 'Material UI', 'Tailwind CSS', 'AWS', 'Développement Web', 'Portfolio'],

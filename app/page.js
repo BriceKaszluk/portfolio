@@ -230,10 +230,10 @@ export default function Home() {
       </div>
 
       <div className=" mx-auto px-4 py-8 min-h-screen">
-        <div className="grid grid-cols-1 md:grid-cols-2 h-full gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 min-h-screen gap-4">
           {/* Projet 1 */}
-          <div className="block shadow-lg md:min-h-screen border border-gray-500">
-            <div className="relative w-full md:h-1/2">
+          <div className="flex flex-col justify-between shadow-lg md:min-h-screen border border-gray-500">
+            <div className="relative w-full">
               {/* Image container */}
               <Image
                 src="/weneedlove-picture.png"
@@ -247,8 +247,8 @@ export default function Home() {
             </div>
 
             {/* Project Information */}
-            <div className="p-4 h-1/2 flex flex-col justify-between">
-              <h3 className="font-bold text-white">WeNeedLove</h3>
+            <h3 className="pl-4 font-bold text-white">WeNeedLove</h3>
+            <div className="px-4 flex flex-col justify-between">
               <p className="text-white mt-2">
                 WeNeedLove est une application dédiée à la création de liens par
                 le partage d&apos;histoires personnelles touchantes, favorisant
@@ -273,52 +273,52 @@ export default function Home() {
                   les utilisateurs informés des dernières interactions.
                 </li>
               </ul>
-              <div className="mt-4">
-                <span className="font-semibold text-white">
-                  Compétences clés :
-                </span>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    Vercel
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    Supabase
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    Tailwind CSS
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    GitHub
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    Next.js
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    React.js
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    JavaScript
-                  </span>
-                </div>
-              </div>
-
-              {/* Project Access Button */}
-              <Link
-                href="https://www.weneedlove.fr/"
-                passHref
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="mt-4 py-2 px-4 bg-blue-500 text-white font-bold text-center rounded hover:bg-blue-600 transition duration-300">
-                  Voir le projet
-                </div>
-              </Link>
             </div>
+            <div className="pl-4">
+              <span className="font-semibold text-white">
+                Compétences clés :
+              </span>
+              <div className="flex flex-wrap gap-2 mt-2">
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  Vercel
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  Supabase
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  Tailwind CSS
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  GitHub
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  Next.js
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  React.js
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  JavaScript
+                </span>
+              </div>
+            </div>
+
+            {/* Project Access Button */}
+            <Link
+              href="https://www.weneedlove.fr/"
+              passHref
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="mt-4 py-2 px-4 bg-blue-500 text-white font-bold text-center rounded hover:bg-blue-600 transition duration-300">
+                Voir le projet
+              </div>
+            </Link>
           </div>
 
           {/* Projet 2 */}
-          <div className="block shadow-lg md:min-h-screen border border-gray-500">
-          <div className="relative w-full md:h-1/2">
+          <div className="flex flex-col justify-between shadow-lg md:min-h-screen border border-gray-500">
+            <div className="relative w-full">
               {/* Image container */}
               <Image
                 src="/phishing-detector-picture.png"
@@ -330,8 +330,10 @@ export default function Home() {
                 quality={100}
               />
             </div>
-            <div className="p-4 h-1/2 flex flex-col justify-between">
-              <h3 className="font-bold">Phishing Detection App</h3>
+            <h3 className="pl-4 font-bold text-white">
+              Phishing Detection App
+            </h3>
+            <div className="px-4 flex flex-col">
               <p className="text-white mt-2">
                 Une solution innovante d&apos;analyse de phishing qui permet aux
                 utilisateurs de scanner et d&apos;obtenir un score de sécurité
@@ -358,51 +360,51 @@ export default function Home() {
                   pour gérer le traitement des e-mails.
                 </li>
               </ul>
-              <div className="mt-4">
-                <span className="font-semibold">Compétences clés :</span>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    TypeScript
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    Vercel
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    Material-UI
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    Supabase
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    Tailwind CSS
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    GitHub
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    Next.js
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    Sens de l&apos;organisation
-                  </span>
-                </div>
-              </div>
-              <Link
-                href="https://www.phishing-detector.fr/"
-                passHref
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="mt-4 py-2 px-4 bg-blue-500 text-white font-bold text-center rounded hover:bg-blue-600 transition duration-300">
-                  Voir le projet
-                </div>
-              </Link>
             </div>
+            <div className="pl-4">
+              <span className="font-semibold">Compétences clés :</span>
+              <div className="flex flex-wrap gap-2 mt-2">
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  TypeScript
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  Vercel
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  Material-UI
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  Supabase
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  Tailwind CSS
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  GitHub
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  Next.js
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  Sens de l&apos;organisation
+                </span>
+              </div>
+            </div>
+            <Link
+              href="https://www.phishing-detector.fr/"
+              passHref
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="mt-4 py-2 px-4 bg-blue-500 text-white font-bold text-center rounded hover:bg-blue-600 transition duration-300">
+                Voir le projet
+              </div>
+            </Link>
           </div>
 
           {/* Projet 3 */}
-          <div className="block shadow-lg md:min-h-screen border border-gray-500">
-          <div className="relative w-full md:h-1/2">
+          <div className="flex flex-col justify-between shadow-lg md:min-h-screen border border-gray-500">
+            <div className="relative w-full">
               {/* Image container */}
               <Image
                 src="/webvista-picture.png"
@@ -414,8 +416,8 @@ export default function Home() {
                 quality={100}
               />
             </div>
-            <div className="p-4 h-1/2 flex flex-col justify-between">
-              <h3 className="font-bold">Mon Site Webvista</h3>
+            <h3 className="pl-4 font-bold text-white">Mon Site Webvista</h3>
+            <div className="px-4 flex flex-col">
               <p className="text-white mt-2">
                 Mon site personnel conçu pour mettre en avant mon expertise et
                 atteindre la première position sur le mot clé
@@ -440,42 +442,42 @@ export default function Home() {
                   pour une expérience visiteur améliorée.
                 </li>
               </ul>
-              <div className="mt-4">
-                <span className="font-semibold">Compétences clés :</span>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    SEO
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    Vercel
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    Tailwind CSS
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    GitHub
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    Next.js
-                  </span>
-                </div>
-              </div>
-              <Link
-                href="https://www.webvista.fr/"
-                passHref
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="mt-4 py-2 px-4 bg-blue-500 text-white font-bold text-center rounded hover:bg-blue-600 transition duration-300">
-                  Voir le projet
-                </div>
-              </Link>
             </div>
+            <div className="pl-4">
+              <span className="font-semibold">Compétences clés :</span>
+              <div className="flex flex-wrap gap-2 mt-2">
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  SEO
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  Vercel
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  Tailwind CSS
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  GitHub
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  Next.js
+                </span>
+              </div>
+            </div>
+            <Link
+              href="https://www.webvista.fr/"
+              passHref
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="mt-4 py-2 px-4 bg-blue-500 text-white font-bold text-center rounded hover:bg-blue-600 transition duration-300">
+                Voir le projet
+              </div>
+            </Link>
           </div>
 
           {/* Projet 4 */}
-          <div className="block shadow-lg md:min-h-screen border border-gray-500">
-          <div className="relative w-full md:h-1/2">
+          <div className="flex flex-col justify-between shadow-lg md:min-h-screen border border-gray-500">
+            <div className="relative w-full">
               {/* Image container */}
               <Image
                 src="/christian-picture.png"
@@ -487,8 +489,10 @@ export default function Home() {
                 quality={100}
               />
             </div>
-            <div className="p-4 h-1/2 flex flex-col justify-between">
-              <h3 className="font-bold">Site Vitrine pour Photographe</h3>
+            <h3 className="pl-4 font-bold text-white">
+              Site Vitrine pour Photographe
+            </h3>
+            <div className="px-4 flex flex-col">
               <p className="text-white mt-2">
                 Un site élégant et interactif permettant au photographe de
                 présenter son travail à travers un carousel personnalisable, de
@@ -513,37 +517,37 @@ export default function Home() {
                   analytics avancés.
                 </li>
               </ul>
-              <div className="mt-4">
-                <span className="font-semibold">Compétences clés :</span>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    Vercel
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    Next.js
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    TypeScript
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    Tailwind CSS
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                    Supabase
-                  </span>
-                </div>
-              </div>
-              <Link
-                href="https://christian-free-nextjs.vercel.app/"
-                passHref
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="mt-4 py-2 px-4 bg-blue-500 text-white font-bold text-center rounded hover:bg-blue-600 transition duration-300">
-                  Voir le projet
-                </div>
-              </Link>
             </div>
+            <div className="pl-4">
+              <span className="font-semibold">Compétences clés :</span>
+              <div className="flex flex-wrap gap-2 mt-2">
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  Vercel
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  Next.js
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  TypeScript
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  Tailwind CSS
+                </span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  Supabase
+                </span>
+              </div>
+            </div>
+            <Link
+              href="https://christian-free-nextjs.vercel.app/"
+              passHref
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="mt-4 py-2 px-4 bg-blue-500 text-white font-bold text-center rounded hover:bg-blue-600 transition duration-300">
+                Voir le projet
+              </div>
+            </Link>
           </div>
         </div>
       </div>
